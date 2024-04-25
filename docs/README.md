@@ -26,6 +26,7 @@
 - [setDebug](README.md#setdebug)
 - [setValue](README.md#setvalue)
 - [toString](README.md#tostring)
+- [useDatalayer](README.md#usedatalayer)
 
 ## Variables
 
@@ -367,3 +368,22 @@ Returns the datalayer as a string
 `string`
 
 The datalayer string
+
+___
+
+### useDatalayer
+
+▸ **useDatalayer**(`datalayer?`): `void`
+
+Enables to set an own custom datalayer object
+If null is passed as a parameter, the default global datalayer will be reset and used
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `datalayer?` | ``null`` \| `object` | The (custom) datalayer object |
+
+#### Returns
+
+`void`
