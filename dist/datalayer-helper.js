@@ -1,4 +1,4 @@
-/* datalayer-helper (2024-04-24T19:29:36.044Z). Copyright 2024 Toni Arndt. This work is licensed under the terms of the MIT license. For a copy, see <https://github.com/toniarndt/datalayer-helper/blob/main/LICENSE>. */
+/* datalayer-helper (2024-04-25T20:38:53.132Z). Copyright 2024 Toni Arndt. This work is licensed under the terms of the MIT license. For a copy, see <https://github.com/toniarndt/datalayer-helper/blob/main/LICENSE>. */
 "use strict";
 var d = (() => {
   var __defProp = Object.defineProperty;
@@ -40,6 +40,7 @@ var d = (() => {
     setDebug: () => setDebug,
     setValue: () => setValue,
     toString: () => toString,
+    useDatalayer: () => useDatalayer,
     version: () => version
   });
 
@@ -361,6 +362,33 @@ var d = (() => {
       level: "log"
     });
     return JSON.stringify(window._datalayer);
+  }
+
+  // src/datalayer/use-datalayer.ts
+  function useDatalayer(datalayer) {
+    if (datalayer == null) {
+      window._datalayer = {};
+      log({
+        functionName: "useDatalayer",
+        message: "Standard global datalayer object has been reset and is now used",
+        level: "log"
+      });
+    } else {
+      if (typeof datalayer === "object") {
+        window._datalayer = datalayer;
+        log({
+          functionName: "useDatalayer",
+          message: "Custom global datalayer object is now used",
+          level: "log"
+        });
+      } else {
+        log({
+          functionName: "useDatalayer",
+          message: "Custom datalayer object cannot be used because no object was transferred",
+          level: "error"
+        });
+      }
+    }
   }
 
   // src/index.ts
