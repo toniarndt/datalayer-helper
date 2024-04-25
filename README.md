@@ -6,9 +6,11 @@ A JavaScript library for working with datalayers.
   - [Quick Start](#quick-start)
   - [Why do we need a library?](#why-do-we-need-a-library)
   - [Using the library](#using-the-library)
+  - [Where is the data stored?](#where-is-the-data-stored)
   - [Debugging](#debugging)
   - [Documentation](#documentation)
   - [Build and test](#build-and-test)
+  - [Contributing](#contributing)
   - [License](#license)
 
 ## Quick Start
@@ -38,6 +40,16 @@ Example call:
 ```js
 d.version; // to get the current version
 ```
+
+## Where is the data stored?
+
+By default, the data is saved in the global datalayer object:
+
+```js
+window._datalayer;
+```
+
+Alternatively, you can also use a custom datalayer if you already have an existing implementation.
 
 ## Debugging
 
