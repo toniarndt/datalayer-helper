@@ -11,7 +11,7 @@
     "lint": "yarn lint:js && yarn lint:types",
     "lint:js": "eslint src --ext .ts,.js",
     "lint:types": "tsc --noEmit",
-    "build:docs": "rm -rf ./docs && typedoc --plugin typedoc-plugin-markdown --hideBreadcrumbs",
+    "build:docs": "rm -rf ./docs && typedoc --sort source-order --plugin typedoc-plugin-markdown --hideBreadcrumbs",
     "build": "rm -rf ./dist && yarn esbuild",
     "build:all": "yarn lint && yarn build && yarn build:docs",
     "esbuild": "node esbuild.js",
