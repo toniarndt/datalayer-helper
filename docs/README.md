@@ -8,25 +8,25 @@
 
 ### Functions
 
-- [clearDatalayer](README.md#cleardatalayer)
-- [cloneDatalayer](README.md#clonedatalayer)
-- [combine](README.md#combine)
 - [decodeBase64](README.md#decodebase64)
-- [deleteCookie](README.md#deletecookie)
 - [encodeBase64](README.md#encodebase64)
-- [flattenDatalayer](README.md#flattendatalayer)
-- [fromString](README.md#fromstring)
+- [deleteCookie](README.md#deletecookie)
 - [getCookie](README.md#getcookie)
 - [getCookies](README.md#getcookies)
-- [getDatalayer](README.md#getdatalayer)
-- [getQueryParameter](README.md#getqueryparameter)
-- [getValue](README.md#getvalue)
-- [log](README.md#log)
 - [setCookie](README.md#setcookie)
-- [setDebug](README.md#setdebug)
-- [setValue](README.md#setvalue)
+- [clearDatalayer](README.md#cleardatalayer)
+- [cloneDatalayer](README.md#clonedatalayer)
+- [flattenDatalayer](README.md#flattendatalayer)
+- [fromString](README.md#fromstring)
+- [getDatalayer](README.md#getdatalayer)
 - [toString](README.md#tostring)
 - [useDatalayer](README.md#usedatalayer)
+- [log](README.md#log)
+- [setDebug](README.md#setdebug)
+- [getQueryParameter](README.md#getqueryparameter)
+- [combine](README.md#combine)
+- [getValue](README.md#getvalue)
+- [setValue](README.md#setvalue)
 
 ## Variables
 
@@ -37,61 +37,6 @@
 The version of the library
 
 ## Functions
-
-### clearDatalayer
-
-▸ **clearDatalayer**(): `void`
-
-Deletes the content of the datalayer object
-
-#### Returns
-
-`void`
-
-___
-
-### cloneDatalayer
-
-▸ **cloneDatalayer**(`datalayer`): `object`
-
-Clones the datalayer object and returns it
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `datalayer` | `object` | Datalayer object which should be cloned |
-
-#### Returns
-
-`object`
-
-The cloned object
-
-___
-
-### combine
-
-▸ **combine**(`array1`, `array2`, `separator1?`, `separator2?`): `string`
-
-Combines the individual values from different arrays into pairs
-
-#### Parameters
-
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `array1` | `string`[] | `undefined` | The first array with strings |
-| `array2` | `string`[] | `undefined` | The second array with strings |
-| `separator1` | `string` | `','` | Separator for the combined pairs |
-| `separator2` | `string` | `':'` | Separator between the individual pair values |
-
-#### Returns
-
-`string`
-
-Returns the combined string
-
-___
 
 ### decodeBase64
 
@@ -110,24 +55,6 @@ Decodes a string from base64
 `string`
 
 The decoded string
-
-___
-
-### deleteCookie
-
-▸ **deleteCookie**(`name`): `void`
-
-Removes a cookie, if it exists
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | Name of the cookie |
-
-#### Returns
-
-`void`
 
 ___
 
@@ -151,37 +78,17 @@ The encoded string
 
 ___
 
-### flattenDatalayer
+### deleteCookie
 
-▸ **flattenDatalayer**(`datalayer`): `object`
+▸ **deleteCookie**(`name`): `void`
 
-Flattens the datalayer object and returns it
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `datalayer` | `object` | Datalayer object which should be flattened |
-
-#### Returns
-
-`object`
-
-The flattened object
-
-___
-
-### fromString
-
-▸ **fromString**(`str`): `void`
-
-Creates the datalayer from a JSON string
+Removes a cookie, if it exists
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `str` | `string` | JSON string for the datalayer |
+| `name` | `string` | Name of the cookie |
 
 #### Returns
 
@@ -223,79 +130,6 @@ Data as key value pair or null
 
 ___
 
-### getDatalayer
-
-▸ **getDatalayer**(): `object`
-
-Returns the datalayer as an object
-
-#### Returns
-
-`object`
-
-The datalayer object
-
-___
-
-### getQueryParameter
-
-▸ **getQueryParameter**(`url?`): `string`[][]
-
-Returns the query parameters of the current page or any URL as a
-multidimensional string array so that duplicate parameters are not dropped
-
-#### Parameters
-
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `url` | `string` | `document.URL` | Any URL or, by default, the current URL of the website |
-
-#### Returns
-
-`string`[][]
-
-Query parameters as multidimensional string array
-
-___
-
-### getValue
-
-▸ **getValue**(`namespace`): `string` \| ``null``
-
-Returns the value of a variable in the datalayer
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `namespace` | `string` | Namespace of the variable (can be separated with a dot) |
-
-#### Returns
-
-`string` \| ``null``
-
-Value of a variable or null if it does not exist
-
-___
-
-### log
-
-▸ **log**(`log`): `void`
-
-Writes the message to the console if debug mode is activated
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `log` | `LogEntry` | The LogEntry to write to the console |
-
-#### Returns
-
-`void`
-
-___
-
 ### setCookie
 
 ▸ **setCookie**(`name`, `value`, `seconds?`, `path?`): `void`
@@ -319,17 +153,11 @@ exists with the specified name and value.
 
 ___
 
-### setDebug
+### clearDatalayer
 
-▸ **setDebug**(`debug`): `void`
+▸ **clearDatalayer**(): `void`
 
-Allows to change the debug mode
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `debug` | `boolean` | Specifies whether debug mode should be activated or deactivated |
+Deletes the content of the datalayer object
 
 #### Returns
 
@@ -337,23 +165,75 @@ Allows to change the debug mode
 
 ___
 
-### setValue
+### cloneDatalayer
 
-▸ **setValue**(`namespace`, `value`): `void`
+▸ **cloneDatalayer**(`datalayer`): `object`
 
-Creates the required namespace in a data layer object
-and overwrites it if it already exists
+Clones the datalayer object and returns it
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `namespace` | `string` | Namespace of the variable (can be separated with a dot) |
-| `value` | `string` | Value of the variable |
+| `datalayer` | `object` | Datalayer object which should be cloned |
+
+#### Returns
+
+`object`
+
+The cloned object
+
+___
+
+### flattenDatalayer
+
+▸ **flattenDatalayer**(`datalayer`): `object`
+
+Flattens the datalayer object and returns it
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `datalayer` | `object` | Datalayer object which should be flattened |
+
+#### Returns
+
+`object`
+
+The flattened object
+
+___
+
+### fromString
+
+▸ **fromString**(`str`): `void`
+
+Creates the datalayer from a JSON string
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `str` | `string` | JSON string for the datalayer |
 
 #### Returns
 
 `void`
+
+___
+
+### getDatalayer
+
+▸ **getDatalayer**(): `object`
+
+Returns the datalayer as an object
+
+#### Returns
+
+`object`
+
+The datalayer object
 
 ___
 
@@ -383,6 +263,126 @@ If null is passed as a parameter, the default global datalayer will be reset and
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `datalayer?` | ``null`` \| `object` | The (custom) datalayer object |
+
+#### Returns
+
+`void`
+
+___
+
+### log
+
+▸ **log**(`log`): `void`
+
+Writes the message to the console if debug mode is activated
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `log` | `LogEntry` | The LogEntry to write to the console |
+
+#### Returns
+
+`void`
+
+___
+
+### setDebug
+
+▸ **setDebug**(`debug`): `void`
+
+Allows to change the debug mode
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `debug` | `boolean` | Specifies whether debug mode should be activated or deactivated |
+
+#### Returns
+
+`void`
+
+___
+
+### getQueryParameter
+
+▸ **getQueryParameter**(`url?`): `string`[][]
+
+Returns the query parameters of the current page or any URL as a
+multidimensional string array so that duplicate parameters are not dropped
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `url` | `string` | `document.URL` | Any URL or, by default, the current URL of the website |
+
+#### Returns
+
+`string`[][]
+
+Query parameters as multidimensional string array
+
+___
+
+### combine
+
+▸ **combine**(`array1`, `array2`, `separator1?`, `separator2?`): `string`
+
+Combines the individual values from different arrays into pairs
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `array1` | `string`[] | `undefined` | The first array with strings |
+| `array2` | `string`[] | `undefined` | The second array with strings |
+| `separator1` | `string` | `','` | Separator for the combined pairs |
+| `separator2` | `string` | `':'` | Separator between the individual pair values |
+
+#### Returns
+
+`string`
+
+Returns the combined string
+
+___
+
+### getValue
+
+▸ **getValue**(`namespace`): `string` \| ``null``
+
+Returns the value of a variable in the datalayer
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `namespace` | `string` | Namespace of the variable (can be separated with a dot) |
+
+#### Returns
+
+`string` \| ``null``
+
+Value of a variable or null if it does not exist
+
+___
+
+### setValue
+
+▸ **setValue**(`namespace`, `value`): `void`
+
+Creates the required namespace in a data layer object
+and overwrites it if it already exists
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `namespace` | `string` | Namespace of the variable (can be separated with a dot) |
+| `value` | `string` | Value of the variable |
 
 #### Returns
 
