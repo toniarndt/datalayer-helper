@@ -29,6 +29,7 @@
     "prettier": "^3.2.5",
     "typedoc": "^0.25.8",
     "typedoc-plugin-markdown": "^3.17.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "esbuild-plugin-define": "^0.4.0"
   }
 }

@@ -690,6 +690,11 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
+esbuild-plugin-define@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/esbuild-plugin-define/-/esbuild-plugin-define-0.4.0.tgz#9d9a12cd660f57e91d8484edc10016faa1396076"
+  integrity sha512-ylJeiuafplaDsKE+S9hDRF/puxZ+uymHzr/lOYEmSD8jnDewKDMgl9e/YzBpSd3IvdfbxxyK3xCs2josZjSwPQ==
+
 esbuild@^0.20.0:
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.20.0.tgz#a7170b63447286cd2ff1f01579f09970e6965da4"
