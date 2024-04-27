@@ -1,4 +1,4 @@
 /**
- * The version of the library
+ * The builddate of the library
  */
-export const version = '1.0.0';
+export const builddate = process.env.builddate || 'unknown';
