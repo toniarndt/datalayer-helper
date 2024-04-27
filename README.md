@@ -38,7 +38,7 @@ We introduce a new object (**d-object**) on the page that can be accessed and th
 Example call:
 
 ```js
-d.version; // to get the current version
+d.builddate; // to get the builddate
 ```
 
 ## Where is the data stored?

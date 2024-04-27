@@ -4,7 +4,7 @@
 
 ### Variables
 
-- [version](README.md#version)
+- [builddate](README.md#builddate)
 
 ### Functions
 
@@ -23,18 +23,18 @@
 - [useDatalayer](README.md#usedatalayer)
 - [log](README.md#log)
 - [setDebug](README.md#setdebug)
-- [getQueryParameter](README.md#getqueryparameter)
+- [getQueryParameters](README.md#getqueryparameters)
 - [combine](README.md#combine)
 - [getValue](README.md#getvalue)
 - [setValue](README.md#setvalue)
 
 ## Variables
 
-### version
+### builddate
 
-• `Const` **version**: ``"1.0.0"``
+• `Const` **builddate**: `string`
 
-The version of the library
+The builddate of the library
 
 ## Functions
 
@@ -306,9 +306,9 @@ Allows to change the debug mode
 
 ___
 
-### getQueryParameter
+### getQueryParameters
 
-▸ **getQueryParameter**(`url?`): `string`[][]
+▸ **getQueryParameters**(`url?`): `string`[][]
 
 Returns the query parameters of the current page or any URL as a
 multidimensional string array so that duplicate parameters are not dropped
