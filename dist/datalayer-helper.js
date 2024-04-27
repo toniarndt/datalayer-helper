@@ -1,4 +1,4 @@
-/* datalayer-helper (2024-04-25T20:38:53.132Z). Copyright 2024 Toni Arndt. This work is licensed under the terms of the MIT license. For a copy, see <https://github.com/toniarndt/datalayer-helper/blob/main/LICENSE>. */
+/* datalayer-helper (2024-04-27T13:02:16.553Z). Copyright 2024 Toni Arndt. This work is licensed under the terms of the MIT license. For a copy, see <https://github.com/toniarndt/datalayer-helper/blob/main/LICENSE>. */
 "use strict";
 var d = (() => {
   var __defProp = Object.defineProperty;
@@ -22,6 +22,7 @@ var d = (() => {
   // src/index.ts
   var src_exports = {};
   __export(src_exports, {
+    builddate: () => builddate,
     clearDatalayer: () => clearDatalayer,
     cloneDatalayer: () => cloneDatalayer,
     combine: () => combine,
@@ -33,19 +34,18 @@ var d = (() => {
     getCookie: () => getCookie,
     getCookies: () => getCookies,
     getDatalayer: () => getDatalayer,
-    getQueryParameter: () => getQueryParameter,
+    getQueryParameters: () => getQueryParameters,
     getValue: () => getValue,
     log: () => log,
     setCookie: () => setCookie,
     setDebug: () => setDebug,
     setValue: () => setValue,
     toString: () => toString,
-    useDatalayer: () => useDatalayer,
-    version: () => version
+    useDatalayer: () => useDatalayer
   });
 
   // src/config/config.ts
-  var version = "1.0.0";
+  var builddate = "2024-04-27T13:02:16.553Z";
 
   // src/common/clone.ts
   function clone(object) {
@@ -260,8 +260,8 @@ var d = (() => {
     });
   }
 
-  // src/query/get-query-parameter.ts
-  function getQueryParameter(url = document.URL) {
+  // src/query/get-query-parameters.ts
+  function getQueryParameters(url = document.URL) {
     const arr = [];
     if (url.indexOf("?") != -1) {
       const queryString = url.split("?");

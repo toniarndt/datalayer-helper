@@ -7,7 +7,7 @@ import * as dbg from '../debug';
  * @param url Any URL or, by default, the current URL of the website
  * @returns Query parameters as multidimensional string array
  */
-export function getQueryParameter(url: string = document.URL): string[][] {
+export function getQueryParameters(url: string = document.URL): string[][] {
   const arr: string[][] = [];
 
   if (url.indexOf('?') != -1) {
