@@ -25,7 +25,23 @@ Alternatively, you can also integrate the source code of the library directly on
 
 ## Why do we need a library?
 
-A datalayer is the interface between developers and web analysts. It simplifies the transfer of variable values. Working with a datalayer can be time-consuming and repetitive for web analysts, depending on the complexity of the project. To simplify this process, this library comes into play, which provides many functions that are frequently required.
+The datalayer is an essential concept in web development, especially when working with tools like tag manager. Here are some reasons why you should use a library like this:
+
+### Simplify data handling
+
+The library abstracts away the complexity of dealing with the datalayer, allowing developers to focus on the logic of the application instead of managing data structures.
+
+### Improved performance
+
+Optimized code and reduction of redundant code in projects have a positive effect on the loading speed and execution time of scripts.
+
+### Debugging
+
+Integrated debugging enables simple testing of the implementation and assists with troubleshooting.
+
+### Easier collaboration
+
+A standardized approach to working with the datalayer simplifies teamwork by making the code easier to understand and share.
 
 To use this library, you'll need to get it onto the page. The easiest way to do this
 is by [following these instructions.](#quick-start)
@@ -108,9 +124,9 @@ yarn build:all
 
 ## Contributing
 
-If you wish to contribute to this repository, please first discuss the change you wish to make by issue, e-mail or other means with the owners of this repository before making a change.
+If you wish to contribute to this repository, please first discuss the change you wish to make by issue, e-mail or other means with the owners of this repository before making a change. Stay friendly!
 
-Stay friendly!
+Author: [hello@toniarndt.com](mailto:hello@toniarndt.com)
 
 ## License
 
