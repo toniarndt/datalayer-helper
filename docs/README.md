@@ -23,6 +23,7 @@
 - [useDatalayer](README.md#usedatalayer)
 - [log](README.md#log)
 - [setDebug](README.md#setdebug)
+- [getQueryParameter](README.md#getqueryparameter)
 - [getQueryParameters](README.md#getqueryparameters)
 - [combine](README.md#combine)
 - [getValue](README.md#getvalue)
@@ -303,6 +304,29 @@ Allows to change the debug mode
 #### Returns
 
 `void`
+
+___
+
+### getQueryParameter
+
+▸ **getQueryParameter**(`key`, `type?`, `url?`): `string`[] \| `string` \| ``null``
+
+Returns the query parameters of the current page or any URL as a string (first value),
+string array (all values) or null if no values were found for the key
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `key` | `string` | `undefined` | Query key for which the values are to be returned |
+| `type` | ``"string"`` \| ``"array"`` | `'string'` | By default, returns a string with the first value found, with the Array option all values will be returned |
+| `url` | `string` | `document.URL` | Any URL or, by default, the current URL of the website |
+
+#### Returns
+
+`string`[] \| `string` \| ``null``
+
+Returns values as string, string array or zero if no matching values were found for the key
 
 ___
 
