@@ -29,13 +29,13 @@ export function getQueryParameters(url: string = document.URL): string[][] {
   if (arr.length == 0) {
     dbg.log({
       message: 'No query parameters passed',
-      functionName: 'getQueryParameter',
+      functionName: 'getQueryParameters',
       level: 'warn'
     });
   } else {
     dbg.log({
       message: null,
-      functionName: 'getQueryParameter',
+      functionName: 'getQueryParameters',
       level: 'log',
       args: arr
     });
