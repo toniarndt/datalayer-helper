@@ -1,4 +1,4 @@
-/* datalayer-helper (2024-04-27T13:02:16.553Z). Copyright 2024 Toni Arndt. This work is licensed under the terms of the MIT license. For a copy, see <https://github.com/toniarndt/datalayer-helper/blob/main/LICENSE>. */
+/* datalayer-helper (2024-04-28T17:22:33.662Z). Copyright 2024 Toni Arndt. This work is licensed under the terms of the MIT license. For a copy, see <https://github.com/toniarndt/datalayer-helper/blob/main/LICENSE>. */
 "use strict";
 var d = (() => {
   var __defProp = Object.defineProperty;
@@ -34,6 +34,7 @@ var d = (() => {
     getCookie: () => getCookie,
     getCookies: () => getCookies,
     getDatalayer: () => getDatalayer,
+    getQueryParameter: () => getQueryParameter,
     getQueryParameters: () => getQueryParameters,
     getValue: () => getValue,
     log: () => log,
@@ -45,7 +46,7 @@ var d = (() => {
   });
 
   // src/config/config.ts
-  var builddate = "2024-04-27T13:02:16.553Z";
+  var builddate = "2024-04-28T17:22:33.662Z";
 
   // src/common/clone.ts
   function clone(object) {
@@ -260,6 +261,61 @@ var d = (() => {
     });
   }
 
+  // src/query/get-query-parameter.ts
+  function getQueryParameter(key, type = "string", url = document.URL) {
+    if (type != "string" && type != "array") {
+      log({
+        message: `Invalid type "${type}" was passed (string | array)`,
+        functionName: "getQueryParameter",
+        level: "error"
+      });
+      return null;
+    }
+    const arr = [];
+    if (url.indexOf("?") != -1) {
+      const queryString = url.split("?");
+      if (queryString.length >= 1) {
+        const parts = queryString[1].split("&");
+        for (let i = 0; i < parts.length; i++) {
+          const [tmp_key, tmp_value] = parts[i].split("=");
+          const _key = decodeURIComponent(tmp_key);
+          if (key != _key)
+            continue;
+          const _value = typeof tmp_value == "undefined" ? "" : decodeURIComponent(tmp_value);
+          arr.push(_value);
+        }
+      }
+    }
+    if (arr.length == 0) {
+      log({
+        message: `No query parameters passed for the key "${key}"`,
+        functionName: "getQueryParameter",
+        level: "warn"
+      });
+      return null;
+    }
+    switch (type) {
+      case "string":
+        log({
+          message: `"${key}" (first-value)`,
+          functionName: "getQueryParameter",
+          level: "log",
+          args: arr[0]
+        });
+        return arr[0];
+      case "array":
+        log({
+          message: `"${key}" (all-values)`,
+          functionName: "getQueryParameter",
+          level: "log",
+          args: arr
+        });
+        return arr;
+      default:
+        return null;
+    }
+  }
+
   // src/query/get-query-parameters.ts
   function getQueryParameters(url = document.URL) {
     const arr = [];
@@ -278,13 +334,13 @@ var d = (() => {
     if (arr.length == 0) {
       log({
         message: "No query parameters passed",
-        functionName: "getQueryParameter",
+        functionName: "getQueryParameters",
         level: "warn"
       });
     } else {
       log({
         message: null,
-        functionName: "getQueryParameter",
+        functionName: "getQueryParameters",
         level: "log",
         args: arr
       });
