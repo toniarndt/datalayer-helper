@@ -1,29 +1,14 @@
 import * as dbg from '../debug';
 
 /**
- * Returns the query parameters of the current page or any URL as a string (first value),
- * string array (all values) or null if no values were found for the key
+ * Returns the query parameters of the current page or any URL as a string array
+ * or as an empty array if no values were found for the key
  *
  * @param key Query key for which the values are to be returned
- * @param type By default, returns a string with the first value found, with the Array option all values will be returned
  * @param url Any URL or, by default, the current URL of the website
- * @returns Returns values as string, string array or zero if no matching values were found for the key
+ * @returns Returns values as a string array or an empty array if no matching values were found for the key
  */
-export function getQueryParameter(
-  key: string,
-  type: 'string' | 'array' = 'string',
-  url: string = document.URL
-): string[] | string | null {
-  if (type != 'string' && type != 'array') {
-    dbg.log({
-      message: `Invalid type "${type}" was passed (string | array)`,
-      functionName: 'getQueryParameter',
-      level: 'error'
-    });
-
-    return null;
-  }
-
+export function getQueryParameter(key: string, url: string = document.URL): string[] {
   const arr: string[] = [];
 
   if (url.indexOf('?') != -1) {
@@ -46,33 +31,18 @@ export function getQueryParameter(
     dbg.log({
       message: `No query parameters passed for the key "${key}"`,
       functionName: 'getQueryParameter',
-      level: 'warn'
+      level: 'warn',
+      args: arr
     });
-    return null;
+    return [];
   }
 
-  switch (type) {
-    case 'string':
-      dbg.log({
-        message: `"${key}" (first-value)`,
-        functionName: 'getQueryParameter',
-        level: 'log',
-        args: arr[0]
-      });
+  dbg.log({
+    message: `Key: "${key}"`,
+    functionName: 'getQueryParameter',
+    level: 'log',
+    args: arr
+  });
 
-      return arr[0];
-
-    case 'array':
-      dbg.log({
-        message: `"${key}" (all-values)`,
-        functionName: 'getQueryParameter',
-        level: 'log',
-        args: arr
-      });
-
-      return arr;
-
-    default:
-      return null;
-  }
+  return arr;
 }
