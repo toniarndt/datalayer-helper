@@ -1,4 +1,4 @@
-/* datalayer-helper (2024-04-28T17:22:33.662Z). Copyright 2024 Toni Arndt. This work is licensed under the terms of the MIT license. For a copy, see <https://github.com/toniarndt/datalayer-helper/blob/main/LICENSE>. */
+/* datalayer-helper (2024-05-05T19:25:51.542Z). Copyright 2024 Toni Arndt. This work is licensed under the terms of the MIT license. For a copy, see <https://github.com/toniarndt/datalayer-helper/blob/main/LICENSE>. */
 "use strict";
 var d = (() => {
   var __defProp = Object.defineProperty;
@@ -22,7 +22,7 @@ var d = (() => {
   // src/index.ts
   var src_exports = {};
   __export(src_exports, {
-    builddate: () => builddate,
+    buildDate: () => buildDate,
     clearDatalayer: () => clearDatalayer,
     cloneDatalayer: () => cloneDatalayer,
     combine: () => combine,
@@ -46,7 +46,7 @@ var d = (() => {
   });
 
   // src/config/config.ts
-  var builddate = "2024-04-28T17:22:33.662Z";
+  var buildDate = "2024-05-05T19:25:51.542Z";
 
   // src/common/clone.ts
   function clone(object) {
@@ -262,15 +262,7 @@ var d = (() => {
   }
 
   // src/query/get-query-parameter.ts
-  function getQueryParameter(key, type = "string", url = document.URL) {
-    if (type != "string" && type != "array") {
-      log({
-        message: `Invalid type "${type}" was passed (string | array)`,
-        functionName: "getQueryParameter",
-        level: "error"
-      });
-      return null;
-    }
+  function getQueryParameter(key, url = document.URL) {
     const arr = [];
     if (url.indexOf("?") != -1) {
       const queryString = url.split("?");
@@ -290,30 +282,18 @@ var d = (() => {
       log({
         message: `No query parameters passed for the key "${key}"`,
         functionName: "getQueryParameter",
-        level: "warn"
+        level: "warn",
+        args: arr
       });
-      return null;
+      return [];
     }
-    switch (type) {
-      case "string":
-        log({
-          message: `"${key}" (first-value)`,
-          functionName: "getQueryParameter",
-          level: "log",
-          args: arr[0]
-        });
-        return arr[0];
-      case "array":
-        log({
-          message: `"${key}" (all-values)`,
-          functionName: "getQueryParameter",
-          level: "log",
-          args: arr
-        });
-        return arr;
-      default:
-        return null;
-    }
+    log({
+      message: `Key: "${key}"`,
+      functionName: "getQueryParameter",
+      level: "log",
+      args: arr
+    });
+    return arr;
   }
 
   // src/query/get-query-parameters.ts

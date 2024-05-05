@@ -1,4 +1,4 @@
 /**
  * The builddate of the library
  */
-export const builddate = process.env.builddate || 'unknown';
+export const buildDate = process.env.builddate || 'unknown';
