@@ -4,7 +4,7 @@
 
 ### Variables
 
-- [builddate](README.md#builddate)
+- [buildDate](README.md#builddate)
 
 ### Functions
 
@@ -31,9 +31,9 @@
 
 ## Variables
 
-### builddate
+### buildDate
 
-• `Const` **builddate**: `string`
+• `Const` **buildDate**: `string`
 
 The builddate of the library
 
@@ -309,24 +309,23 @@ ___
 
 ### getQueryParameter
 
-▸ **getQueryParameter**(`key`, `type?`, `url?`): `string`[] \| `string` \| ``null``
+▸ **getQueryParameter**(`key`, `url?`): `string`[]
 
-Returns the query parameters of the current page or any URL as a string (first value),
-string array (all values) or null if no values were found for the key
+Returns the query parameters of the current page or any URL as a string array
+or as an empty array if no values were found for the key
 
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | `key` | `string` | `undefined` | Query key for which the values are to be returned |
-| `type` | ``"string"`` \| ``"array"`` | `'string'` | By default, returns a string with the first value found, with the Array option all values will be returned |
 | `url` | `string` | `document.URL` | Any URL or, by default, the current URL of the website |
 
 #### Returns
 
-`string`[] \| `string` \| ``null``
+`string`[]
 
-Returns values as string, string array or zero if no matching values were found for the key
+Returns values as a string array or an empty array if no matching values were found for the key
 
 ___
 

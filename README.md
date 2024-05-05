@@ -2,26 +2,33 @@
 
 A JavaScript library for working with datalayers.
 
-- [datalayer-helper](#datalayer-helper)
-  - [Quick Start](#quick-start)
-  - [Why do we need a library?](#why-do-we-need-a-library)
-  - [Using the library](#using-the-library)
-  - [Where is the data stored?](#where-is-the-data-stored)
-  - [Debugging](#debugging)
-  - [Documentation](#documentation)
-  - [Build and test](#build-and-test)
-  - [Contributing](#contributing)
-  - [License](#license)
+- [Quick Start](#quick-start)
+- [Latest Releases](#latest-releases)
+- [Why do we need a library?](#why-do-we-need-a-library)
+- [Using the library](#using-the-library)
+- [Where is the data stored?](#where-is-the-data-stored)
+- [Debugging](#debugging)
+- [Documentation](#documentation)
+- [Build and test](#build-and-test)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Quick Start
 
-Download the JS-library and integrate it into the website. Following the script tag:
+Download the latest version of the JS-library directly from the [dist folder](https://github.com/toniarndt/datalayer-helper/tree/main/dist) and integrate it into your website as follows.
 
 ```html
 <script type="text/javascript" src="datalayer-helper.min.js"></script>
 ```
 
 Alternatively, you can also integrate the source code of the library directly on the page or via a tag manager.
+
+### Latest Releases
+
+| Version                                                                                                    | Description                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| [Regular](https://raw.githubusercontent.com/toniarndt/datalayer-helper/main/dist/datalayer-helper.js)      | This version is human readable, easy to edit and debug, but has a larger file size.                                |
+| [Minified](https://raw.githubusercontent.com/toniarndt/datalayer-helper/main/dist/datalayer-helper.min.js) | This version is smaller and more difficult for humans to read, but it can be loaded more quickly by a web browser. |
 
 ## Why do we need a library?
 
@@ -54,7 +61,7 @@ We introduce a new object (**d-object**) on the page that can be accessed and th
 Example call:
 
 ```js
-d.builddate; // to get the builddate
+d.buildDate; // to get the build date
 ```
 
 ## Where is the data stored?
