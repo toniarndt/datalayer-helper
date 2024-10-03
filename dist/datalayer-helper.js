@@ -1,4 +1,4 @@
-/* datalayer-helper (2024-05-05T19:25:51.542Z). Copyright 2024 Toni Arndt. This work is licensed under the terms of the MIT license. For a copy, see <https://github.com/toniarndt/datalayer-helper/blob/main/LICENSE>. */
+/* datalayer-helper (2024-10-03T18:56:34.318Z). Copyright 2024 Toni Arndt. This work is licensed under the terms of the MIT license. For a copy, see <https://github.com/toniarndt/datalayer-helper/blob/main/LICENSE>. */
 "use strict";
 var d = (() => {
   var __defProp = Object.defineProperty;
@@ -46,7 +46,7 @@ var d = (() => {
   });
 
   // src/config/config.ts
-  var buildDate = "2024-05-05T19:25:51.542Z";
+  var buildDate = "2024-10-03T18:56:34.318Z";
 
   // src/common/clone.ts
   function clone(object) {

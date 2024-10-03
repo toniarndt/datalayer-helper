@@ -22,6 +22,7 @@
     "@typescript-eslint/eslint-plugin": "^7.4.0",
     "@typescript-eslint/parser": "^7.4.0",
     "esbuild": "^0.20.0",
+    "esbuild-plugin-define": "^0.4.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
@@ -29,7 +30,6 @@
     "prettier": "^3.2.5",
     "typedoc": "^0.25.8",
     "typedoc-plugin-markdown": "^3.17.1",
-    "typescript": "^5.3.3",
-    "esbuild-plugin-define": "^0.4.0"
+    "typescript": "^5.3"
   }
 }
