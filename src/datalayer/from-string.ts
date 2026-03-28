@@ -13,7 +13,7 @@ export function fromString(str: string) {
       message: 'Datalayer created from string',
       level: 'log'
     });
-  } catch (error) {
+  } catch {
     dbg.log({
       functionName: 'fromString',
       message: 'Datalayer object could not be created from the string',

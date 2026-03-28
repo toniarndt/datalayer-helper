@@ -1,4 +1,4 @@
-/* datalayer-helper (2024-10-03T18:56:34.318Z). Copyright 2024 Toni Arndt. This work is licensed under the terms of the MIT license. For a copy, see <https://github.com/toniarndt/datalayer-helper/blob/main/LICENSE>. */
+/* datalayer-helper (2026-03-28T06:33:55.481Z). Copyright 2026 Toni Arndt. This work is licensed under the terms of the MIT license. For a copy, see <https://github.com/toniarndt/datalayer-helper/blob/main/LICENSE>. */
 "use strict";
 var d = (() => {
   var __defProp = Object.defineProperty;
@@ -20,8 +20,8 @@ var d = (() => {
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
   // src/index.ts
-  var src_exports = {};
-  __export(src_exports, {
+  var index_exports = {};
+  __export(index_exports, {
     buildDate: () => buildDate,
     clearDatalayer: () => clearDatalayer,
     cloneDatalayer: () => cloneDatalayer,
@@ -46,7 +46,7 @@ var d = (() => {
   });
 
   // src/config/config.ts
-  var buildDate = "2024-10-03T18:56:34.318Z";
+  var buildDate = "2026-03-28T06:33:55.481Z";
 
   // src/common/clone.ts
   function clone(object) {
@@ -92,8 +92,7 @@ var d = (() => {
   // src/debug/set-debug.ts
   var debugOn = false;
   function setDebug(debug) {
-    if (debugOn == debug)
-      return;
+    if (debugOn == debug) return;
     debugOn = debug;
     if (debugOn == true) {
       log({
@@ -116,8 +115,7 @@ var d = (() => {
     if (debugOn == true) {
       const orgMethod = console[log2.level];
       let message = `${_PREFIX} @${log2.functionName}`;
-      if (log2.message != null)
-        message += `: ${log2.message}`;
+      if (log2.message != null) message += `: ${log2.message}`;
       orgMethod.apply(console, log2.args == null ? [message] : [message, log2.args]);
     }
   }
@@ -148,8 +146,7 @@ var d = (() => {
     const parts = namespace.split(".");
     for (let i = 0; i < parts.length; i++) {
       const part = parts[i];
-      if (Object.hasOwn(layer, part) == false)
-        break;
+      if (Object.hasOwn(layer, part) == false) break;
       if (typeof layer[part] == "object") {
         layer = layer[part];
       } else {
@@ -206,8 +203,7 @@ var d = (() => {
       {},
       ...decodeURI(document.cookie).split(";").map((cookie) => {
         const [key, value] = cookie.split("=");
-        if (key.trimStart() == "")
-          return null;
+        if (key.trimStart() == "") return null;
         return { [key.trimStart()]: value };
       })
     );
@@ -271,8 +267,7 @@ var d = (() => {
         for (let i = 0; i < parts.length; i++) {
           const [tmp_key, tmp_value] = parts[i].split("=");
           const _key = decodeURIComponent(tmp_key);
-          if (key != _key)
-            continue;
+          if (key != _key) continue;
           const _value = typeof tmp_value == "undefined" ? "" : decodeURIComponent(tmp_value);
           arr.push(_value);
         }
@@ -381,7 +376,7 @@ var d = (() => {
         message: "Datalayer created from string",
         level: "log"
       });
-    } catch (error) {
+    } catch {
       log({
         functionName: "fromString",
         message: "Datalayer object could not be created from the string",
@@ -431,5 +426,5 @@ var d = (() => {
   if (!window._datalayer) {
     window._datalayer = {};
   }
-  return __toCommonJS(src_exports);
+  return __toCommonJS(index_exports);
 })();
